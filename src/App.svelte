@@ -36,7 +36,10 @@ h1{
 <main>
 <div>
 <h1>To Do List</h1>
+
 <Controller {addItem}/>
+
 <List {list}/>
+
 </div>
 </main>
