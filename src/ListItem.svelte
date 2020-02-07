@@ -2,10 +2,17 @@
   let yes = false;
   export let removeItem;
   export let listItem;
+  export let statusfinder;
 
   function deletehandler() {
    removeItem(listItem.id); 
   }
+  function checkboxhandler()
+  {
+    statusfinder(listItem.id);
+  }
+
+
 </script>
 
 <style>
@@ -80,10 +87,10 @@ strike
 
 <div class="itemsContainer">
 <div class="CheckboxContainer">
- <input type="checkbox" bind:checked={yes} class="checkbox"/>
+ <input type="checkbox" checked={listItem.completed} class="checkbox" on:click={checkboxhandler}/>
  </div>
  <div class="textContainer">
-{#if yes}
+{#if listItem.completed}
  <strike><span class="text">{listItem.task}</span> </strike>
 {:else}
 <span class="text">{listItem.task}</span> 
