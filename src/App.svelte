@@ -1,9 +1,15 @@
 <script>
 
   import TitleBar from "./TitleBar.svelte";
-  import NavBar from "./NavBar.svelte";
+     import NavBar from "./NavBar.svelte";
   import TaskContainer from "./TaskContainer.svelte";
-   
+  let listtype="all";
+   function navClickHandler(e)
+   {
+     listtype=e.target.id;
+    
+     
+   } 
 </script>
 
 <style>
@@ -23,7 +29,8 @@
 
 </svelte:head>
 <main>
+
   <TitleBar />
-  <NavBar />
-  <TaskContainer />
+  <NavBar {navClickHandler}/>
+  <TaskContainer {listtype} />
 </main>

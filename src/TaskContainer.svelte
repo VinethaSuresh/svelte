@@ -2,7 +2,9 @@
   import List from "./List.svelte";
   import Controller from "./Controller.svelte";
    import uuid from "uuid/v1";
+   export let listtype;
   let list = [];
+  let isActive;
   function addItem(newItem) {
   list = [...list, { id: uuid(), task: newItem,deleted:false,completed:false }];
   console.log("list",list);
@@ -11,17 +13,15 @@
   function removeItem(id)
   {
     let index;
-    let value;
    for(let i=0;i<list.length;i++)
    {
      if(list[i].id==id)
      {
        index=i;
-       value=list[i];
 
      }
    }
-   list.deleted=true;
+   list[index].deleted=true;
    list=list;
    console.log(list);
 
@@ -61,11 +61,10 @@
     text-decoration-color: red;
   }
 </style>
-
 <div class="taskContainer">
 <p>Things TO DO</p>
   <div class="task">
     <Controller {addItem} />
-    <List {list} {removeItem} {statusfinder}/>
+    <List {list} {removeItem} {statusfinder} {listtype}/>
   </div>
 </div>

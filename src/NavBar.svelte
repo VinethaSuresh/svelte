@@ -1,4 +1,6 @@
-<style>
+<script>
+export let navClickHandler;
+</script><style>
   ul {
     list-style-type: none;
     padding: 0;
@@ -25,16 +27,16 @@
 </style>
 <ul>
   <li>
-    <a class="active" href="#All">All</a>
+    <a class="active" href="#all" id="all" on:click={navClickHandler}>All</a>
   </li>
   <li>
-    <a href="#Active">Active</a>
+    <a href="#active" id = "active" on:click={navClickHandler}>Active</a>
   </li>
   <li>
-    <a href="#Completed">Completed</a>
+    <a href="#completed" id="completed" on:click={navClickHandler}>Completed</a>
   </li>
   <li>
-    <a href="#Deleted">Deleted</a>
+    <a href="#deleted" id="deleted" on:click={navClickHandler}>Deleted</a>
   </li>
 </ul>
 
