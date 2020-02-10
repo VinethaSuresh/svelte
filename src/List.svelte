@@ -4,7 +4,7 @@ export let removeItem;
 export let statusfinder;
 export let listtype;
 import ListItem from "./ListItem.svelte";
-  import TaskContainer from "./TaskContainer.svelte";
+import TaskContainer from "./TaskContainer.svelte";
 </script>
 
 {#each list as listItem (listItem.id)}

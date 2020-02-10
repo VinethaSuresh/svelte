@@ -11,11 +11,36 @@
   {
     statusfinder(listItem.id);
   }
-
+ 
 
 </script>
 
-<style>
+
+<div class="itemsContainer">
+ {#if !listItem.deleted}
+<div class="CheckboxContainer">
+ <input type="checkbox" checked={listItem.completed} class="checkbox" on:click={checkboxhandler}/>
+ </div>
+ {/if}
+ <div class="textContainer">
+{#if listItem.completed}
+ <strike><span class="text">{listItem.task}</span> </strike>
+{:else}
+<span class="text">{listItem.task}</span> 
+{/if}
+ </div>
+ {#if listItem.deleted}
+ <div class="deleteContainer">
+ <span class="fa fa-undo deleteclass" on:click={deletehandler} />
+ </div>
+ {:else}
+ <div class="deleteContainer">
+ <span class="fa fa-trash w3-large deleteclass" on:click={deletehandler} />
+ </div>
+ {/if}
+ </div>
+
+ <style>
 
 strike
 {
@@ -85,18 +110,3 @@ strike
 }
 </style>
 
-<div class="itemsContainer">
-<div class="CheckboxContainer">
- <input type="checkbox" checked={listItem.completed} class="checkbox" on:click={checkboxhandler}/>
- </div>
- <div class="textContainer">
-{#if listItem.completed}
- <strike><span class="text">{listItem.task}</span> </strike>
-{:else}
-<span class="text">{listItem.task}</span> 
-{/if}
- </div>
- <div class="deleteContainer">
- <span class="fa fa-trash w3-large deleteclass" on:click={deletehandler} />
- </div>
- </div>

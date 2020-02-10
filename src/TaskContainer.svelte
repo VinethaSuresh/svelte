@@ -21,10 +21,9 @@
 
      }
    }
-   list[index].deleted=true;
+   list[index].deleted=!list[index].deleted;
    list=list;
-   console.log(list);
-
+    return index;
   }
   function statusfinder(id)
   {

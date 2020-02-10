@@ -2,7 +2,21 @@
   export let addItem;
   let newItem = "";
   let emptyAdded = false;
+  let addTask=false;
   function clickhandler() {
+    addToList();
+  }
+
+  function keyuphandler(event)
+  {
+    if(event.keyCode===13)
+    {
+      event.preventDefault();
+      addToList();
+    }
+  }
+
+  function addToList(){
     if (newItem != "") {
       emptyAdded = false;
       addItem(newItem);
@@ -19,6 +33,9 @@
   function myFunction() {
     emptyAdded = false;
   }
+
+
+
 </script>
 <style>
 input{
@@ -37,7 +54,7 @@ input{
  }
 </style>
 <div>
-<input type="text" bind:value={newItem} placeholder="add a new to do" on:input={myFunction}  maxlength="40" />
+<input type="text" bind:value={newItem} placeholder="add a new to do" on:input={myFunction}  on:keyup={keyuphandler} maxlength="40" />
 <button type="button" on:click={clickhandler}>Add</button>
 <button type="button" on:click={cancelhandler}>Clear</button>
 </div>
