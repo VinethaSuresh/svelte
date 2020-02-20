@@ -64,6 +64,6 @@
 <p>Things TO DO</p>
   <div class="task">
     <Controller {addItem} />
-    <List {list} {removeItem} {statusfinder} {listtype}/>
+    <List bind:list={list} {removeItem} {statusfinder} {listtype}/>
   </div>
 </div>

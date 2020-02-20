@@ -9,13 +9,13 @@ import TaskContainer from "./TaskContainer.svelte";
 
 {#each list as listItem (listItem.id)}
 {#if (listtype=="all" && !listItem.deleted)}
-  <ListItem  {listItem}  { removeItem} {statusfinder} />
+  <ListItem  bind:listItem={listItem}  { removeItem} {statusfinder} />
 {:else if (listtype=="active" && !listItem.completed && !listItem.deleted)}
-<ListItem  {listItem} { removeItem} {statusfinder} />
+<ListItem  bind:listItem={listItem} { removeItem} {statusfinder} />
 {:else if (listtype=="completed" && listItem.completed && !listItem.deleted)}
-<ListItem  {listItem} { removeItem} {statusfinder} />
+<ListItem  bind:listItem={listItem} { removeItem} {statusfinder} />
 {:else if (listtype=="deleted" &&  listItem.deleted)}
-<ListItem  {listItem} { removeItem} {statusfinder} />
+<ListItem  bind:listItem={listItem} { removeItem} {statusfinder} />
 {/if}
 {/each}
 

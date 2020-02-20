@@ -5,11 +5,12 @@
   export let statusfinder;
 
   function deletehandler() {
-   removeItem(listItem.id); 
+   //removeItem(listItem.id); 
+   listItem.deleted = !listItem.deleted;
   }
   function checkboxhandler()
   {
-    statusfinder(listItem.id);
+    //statusfinder(listItem.id);
   }
  
 
@@ -19,7 +20,7 @@
 <div class="itemsContainer">
  {#if !listItem.deleted}
 <div class="CheckboxContainer">
- <input type="checkbox" checked={listItem.completed} class="checkbox" on:click={checkboxhandler}/>
+ <input type="checkbox" bind:checked={listItem.completed} class="checkbox" />
  </div>
  {/if}
  <div class="textContainer">
