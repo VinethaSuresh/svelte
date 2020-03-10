@@ -1,3 +1,4 @@
-*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+# Svelte ToDoList
 
-# To Do List Using Svelte
+Created TODoList using Svelte.
+
