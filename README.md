@@ -1,4 +1,4 @@
 # Svelte ToDoList
 
-Created TODoList using Svelte.
+Created TODOList using Svelte.
 
